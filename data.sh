@@ -1,0 +1,11 @@
+aws ec2 run-instances \
+  --image-id ami-01bc990364452ab3e \
+  --count 1 \
+  --instance-type t3.micro \
+  --key-name my-aws-key \
+  --security-group-ids sg-04be768cbae41a9fb \
+  --subnet-id subnet-09d78f164f36440bd \
+  --user-data "file://C:/Users/marki/OneDrive/Робочий стіл/hometask2/userdata.sh" \
+  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=MyEC2Instance}]" \
+  --region us-east-1 \
+  --iam-instance-profile Name=readonly
